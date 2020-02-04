@@ -47,8 +47,8 @@
 			<li><a href="setting.html"><i class="fa fa-cog"></i>Settings</a></li>
 			<li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
 			<li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-			<li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-			<li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
+			<li><a href="{{url('/login')}}"><i class="fa fa-sign-in"></i>Login</a></li>
+			<li><a href="{{url('/reg')}}"><i class="fa fa-user-plus"></i>Register</a></li>
 		</ul>
 	</div>
 	<!-- end side nav right-->
@@ -363,33 +363,31 @@
 	<!-- end cart menu -->
 
 	
-	<!-- register -->
+	<!-- login -->
 	<div class="pages section">
 		<div class="container">
 			<div class="pages-head">
-				<h3>REGISTER</h3>
+				<h3>LOGIN</h3>
 			</div>
-			<div class="register">
+			<div class="login">
 				<div class="row">
-					<form class="col s12">
+					<form class="col s12" action="/user/loginDo" method="post">
+						@csrf
 						<div class="input-field">
-							<input type="text" class="validate" placeholder="NAME" required>
+							<input type="text" name="username" class="validate" placeholder="USERNAME" required>
 						</div>
 						<div class="input-field">
-							<input type="email" placeholder="EMAIL" class="validate" required>
+							<input type="password" name="password" class="validate" placeholder="PASSWORD" required>
 						</div>
-						<div class="input-field">
-							<input type="password" placeholder="PASSWORD" class="validate" required>
-						</div>
-						<div class="btn button-default">REGISTER</div>
+						<a href=""><h6>Forgot Password ?</h6></a>
+						<a href="" class="btn button-default"><input type="submit" value='LOGIN'></a>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end register -->
+	<!-- end login -->
 	
-
 	<!-- loader -->
 	<div id="fakeLoader"></div>
 	<!-- end loader -->
